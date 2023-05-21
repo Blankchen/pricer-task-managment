@@ -1,4 +1,5 @@
 # Project structure  
+```
 api/  
   ├── configs        # Config setting
   ├── controllers    # Controller layer  
@@ -16,19 +17,34 @@ test/
 ├── .env             # Front-end test env  
 ├── .env.production  # Front-end prod env  
 ├── ...              # others config files (.gitignore,   jest.config, .sequelizerc, etc)
-
+```
 
 # Test
 ```
 npm run test  
 npm run test:coverage
 ```
-  
+
+# Prerequisites
+- mysql 8.0.33 
+- node version 16
+
 # Deploy step
+- Clone this project from git
+```
+git clone https://github.com/Blankchen/pricer-task-managment
+```
+- Install the node modules
+```
+npm i
+```
 - Update sql connection info  
 api/configs/db.js
 - Update or remove CORS domain setting for Prod  
 api/server.js
-- Build prod website execute `npm run build.web`   
+- Build prod website execute 
+```
+npm run build.web
+```   
 - Run service by `npm run start.server` then access the website   
 http://localhost:3000/
