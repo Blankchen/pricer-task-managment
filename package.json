@@ -7,8 +7,8 @@
     "start.server": "nodemon ./api/server.js",
     "start.web": "react-scripts start",
     "build.web": "react-scripts build",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "jest --forceExit",
+    "test:coverage": "jest --coverage --forceExit"
   },
   "author": "Blank.Chen",
   "license": "ISC",

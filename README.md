@@ -16,12 +16,19 @@ test/
 ├── .env             # Front-end test env  
 ├── .env.production  # Front-end prod env  
 ├── ...              # others config files (.gitignore,   jest.config, .sequelizerc, etc)
+
+
+# Test
+```
+npm run test  
+npm run test:coverage
+```
   
 # Deploy step
 - Update sql connection info  
 api/configs/db.js
 - Update or remove CORS domain setting for Prod  
 api/server.js
-- build prod website execute `npm run build.web`   
-- run service by `npm run start.server` then access the website   
+- Build prod website execute `npm run build.web`   
+- Run service by `npm run start.server` then access the website   
 http://localhost:3000/
