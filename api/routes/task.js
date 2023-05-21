@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const controllers = require("../controllers/taskController");
+  const controllers = require("../controllers/task");
   const AppError = require("../utils/appError");
   const errorHandler = require("../utils/errorHandler");
 

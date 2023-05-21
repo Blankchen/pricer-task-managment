@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require("cors");
-const routes = require('./routes/taskRoutes');
+const routes = require('./routes/task');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;

@@ -1,10 +1,27 @@
-# deploy step
-1. Create table schema
-sqls/task.sql
-2. Update sql connection info
-api/services/db.js
-3. Update or remove CORS domain setting for Prod
+# Project structure  
+api/  
+  ├── configs        # Config setting
+  ├── controllers    # Controller layer  
+  ├── models/        # Model layer with database entities  
+  ├── routes/        # Express route handlers for all the   endpoints of the app  
+  ├── services/      # service layer with the business logic  
+  ├── utils/         # reused utils  
+  ├── server.js      # Express(http-server) config  
+build/               # Front-end build dist  
+public/              # Front-end public asset path  
+src/                 # Front-end React  
+test/  
+  ├── unit/          # all the unit tests of the app  
+├── package.json     # main project configuration file  
+├── .env             # Front-end test env  
+├── .env.production  # Front-end prod env  
+├── ...              # others config files (.gitignore,   jest.config, .sequelizerc, etc)
+  
+# Deploy step
+- Update sql connection info  
+api/configs/db.js
+- Update or remove CORS domain setting for Prod  
 api/server.js
-4. build prod website execute `npm run build.web` 
-5. run service by `npm run start.server` then access the website 
+- build prod website execute `npm run build.web`   
+- run service by `npm run start.server` then access the website   
 http://localhost:3000/

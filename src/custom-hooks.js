@@ -26,8 +26,8 @@ export const useTasks = (initialValue = []) => {
   }, []);
 
   const getList = async () => {
-    const result = await taskAPI.getList();
-    setTasks(result.data);
+    const data = (await taskAPI.getList()) || [];
+    setTasks(data);
   };
 
   return {
@@ -36,18 +36,22 @@ export const useTasks = (initialValue = []) => {
       if (name === "") {
         return;
       }
-      await taskAPI.create(name);
-      
-      getList();
+      const result = await taskAPI.create(name);
+      if (result.status !== "error") {
+        getList();
+      }
     },
     checkTask: async (task) => {
-      await taskAPI.update(task);
-
-      getList();
+      const result = await taskAPI.update(task);
+      if (result.status !== "error") {
+        getList();
+      }
     },
     removeTask: async (id) => {
-      await taskAPI.delete(id);
-      getList();
+      const result = await taskAPI.delete(id);
+      if (result.status !== "error") {
+        getList();
+      }
     },
   };
 };

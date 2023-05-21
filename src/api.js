@@ -14,7 +14,7 @@ export const taskAPI = {
   },
   update(task) {
     const urlencoded = new URLSearchParams();
-    urlencoded.append("checked", task.checked);
+    urlencoded.append("status", !task.status);
     return fetch(`${baseUrl}/task/${task.id}`, {
       method: "PUT",
       body: urlencoded,
